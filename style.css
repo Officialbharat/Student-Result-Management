@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.login-container,
+.marksheet-container {
+    width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4d47d0;
+}
+
+/* Styling the dynamic marksheet */
+.marksheet {
+    margin-top: 20px;
+}
+
+.marksheet h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.result {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.marksheet-container {
+    display: none;
+    width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.marksheet-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.marksheet-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+.marksheet-header h4 {
+    margin: 5px 0 20px 0;
+    font-size: 18px;
+}
+
+.marksheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.marksheet-table th,
+.marksheet-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.marksheet-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    border: 1px solid #ddd; 
+}
+
+.marksheet-footer {
+    margin-top: 30px;
+}
+
+.marksheet-footer p {
+    font-size: 16px;
+    text-align: right;
+}
+
+/* Adding animation to marksheet appearance */
+.marksheet-container {
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

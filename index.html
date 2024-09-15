@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="login-container" id="loginForm">
+        <h2>Login</h2>
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Student Data Input Form -->
+    <div class="login-container" id="studentForm" style="display: none;">
+        <h2>Enter Student Details</h2>
+        <div class="form-group">
+            <input type="text" id="studentName" placeholder="Student Name">
+        </div>
+        <div class="form-group">
+            <input type="text" id="studentRoll" placeholder="Roll Number">
+        </div>
+
+        <!-- Subject Marks Input -->
+        <div class="form-group">
+            <input type="number" id="biology" placeholder="Enter Biology Marks">
+        </div>
+        <div class="form-group">
+            <input type="number" id="chemistry" placeholder="Enter Chemistry Marks">
+        </div>
+        <div class="form-group">
+            <input type="number" id="physics" placeholder="Enter Physics Marks">
+        </div>
+        <button onclick="generateMarksheet()">Generate Marksheet</button>
+    </div>
+
+    <!-- Dynamic Marksheet -->
+    <div class="marksheet-container" id="marksheet">
+        <h2>Codenetic Academy Mithi</h2>
+        <h3>Marks Certificate</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Max Marks</th>
+                    <th>Marks Obtained</th>
+                </tr>
+            </thead>
+            <tbody id="marksheetBody">
+                <!-- Dynamic Data Here -->
+            </tbody>
+        </table>
+        <p class="result" id="result"></p>
+        <p class="result" id="percentage"></p>
+    </div>
+
+    <script src="marksheet.js"></script>
+</body>
+</html>
