@@ -1,138 +1,296 @@
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #000; 
+    color: #ffeb3b; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-container,
-.marksheet-container {
-    width: 400px;
-    margin: 50px auto;
-    background-color: white;
+.login-container {
+    width: 30%;
+    margin: 50px auto !important;
+    background-color: black; 
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(255, 235, 59, 0.5); 
+    color: #ffeb3b; 
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.marksheet-container {
+    width: 100%;
+    margin: 50px auto !important;
+    background-color: rgb(43, 39, 39); 
+    padding: 30px;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(255, 235, 59, 0.5);
+    color: #ffeb3b; 
+    opacity: 0;
+    /* animation: fadeIn 1s ease-in-out forwards; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading {
+    color: #fff;
+    text-align: center;
+    border: 2px solid #fff;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+tbody tr, tbody tr td{
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+
+.res {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.res p{
+    color: white !important;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #fff; 
 }
-
+h3 {
+    text-align: center;
+    color: #fff;
+}
 .form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group select {
     width: 100%;
+}
+.form-group input{
+    width:95%;
     padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
+    margin: 10px 0px;
+    border: 2px solid #ffeb3b;
     border-radius: 5px;
-    box-sizing: border-box;
+    background-color: black; 
+    color: #ffeb3b; 
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.5);
+}
+/* .form-group select {
+    width: 94%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid #ffeb3b; 
+    border-radius: 5px;
+    background-color: black; 
+    color: #ffeb3b; 
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.5);
+} */
+
+.form-group input:focus {
+    border-color: #ffc107; 
+    box-shadow: 0px 0px 15px rgba(255, 193, 7, 0.8);
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #6C63FF;
-    color: white;
+    margin: 10px 0px;
+    background-color: #ffeb3b; 
+    border: 2px solid #ffeb3b;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #4d47d0;
+    background-color: #fbc02d; 
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
 }
 
-/* Styling the dynamic marksheet */
-.marksheet {
-    margin-top: 20px;
-}
-
-.marksheet h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-
-.result {
-    text-align: right;
-    font-weight: bold;
-}
-
-
+/* Marksheet Animations */
 .marksheet-container {
     display: none;
     width: 800px;
     margin: 50px auto;
-    background-color: white;
-    padding: 20px;
+    background-color: black;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(255, 235, 59, 0.5);
+    color: #ffeb3b;
+    animation: bounceIn 1.5s ease forwards;
 }
 
-.marksheet-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.marksheet-header h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #4CAF50;
-}
-
-.marksheet-header h4 {
-    margin: 5px 0 20px 0;
-    font-size: 18px;
-}
-
-.marksheet-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
-.marksheet-table th,
-.marksheet-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.marksheet-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    border: 1px solid #ddd; 
-}
-
-.marksheet-footer {
-    margin-top: 30px;
-}
-
-.marksheet-footer p {
-    font-size: 16px;
-    text-align: right;
-}
-
-/* Adding animation to marksheet appearance */
-.marksheet-container {
-    animation: slideIn 1s ease forwards;
-}
-
-@keyframes slideIn {
+@keyframes bounceIn {
     0% {
         transform: translateY(100%);
         opacity: 0;
+    }
+    60% {
+        transform: translateY(-20px);
+    }
+    80% {
+        transform: translateY(10px);
     }
     100% {
         transform: translateY(0);
         opacity: 1;
     }
 }
+
+.marksheet-table th, .marksheet-table td {
+    border: 1px solid #ffeb3b;
+    padding: 15px;
+    text-align: center;
+}
+
+.marksheet-table th {
+    background-color: #000; 
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    color: #ffeb3b;
+}
+
+#marksheetBody tr {
+    opacity: 0;
+    animation: rowFadeIn 0.5s ease forwards;
+}
+
+@keyframes rowFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container, .marksheet-container {
+        width: 90%; 
+        padding: 20px;
+    }
+
+    table {
+        width: 100%; 
+    }
+
+    .form-group input {
+        width: 95%;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .res p {
+        font-size: 20px; 
+    }
+
+    h2, h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2, h3 {
+        font-size: 16px;
+    }
+
+    .res p {
+        font-size: 18px;
+    }
+
+    .form-group input {
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px;
+    }
+}
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
+thead {
+    background-color: #333; 
+    color: #ffeb3b; 
+}
+
+thead th {
+    font-size: 18px; 
+    padding: 12px; 
+    border-bottom: 3px solid #ffeb3b; 
+    background-color: black;
+}
+
+tbody td {
+    padding: 10px; 
+    border: 1px solid #fff; 
+    font-size: 16px; 
+    color: #ffeb3b; 
+    text-align: center; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #444; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #555; 
+}
+
+
+
+
+
+
+

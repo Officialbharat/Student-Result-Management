@@ -1,7 +1,6 @@
-// Simple Login Validation
 function login() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
     
     if (username === "admin" && password === "admin") {
         document.getElementById("loginForm").style.display = "none";
@@ -16,26 +15,28 @@ function login() {
 
 
 function generateMarksheet() {
-    const studentName = document.getElementById("studentName").value;
-    const studentRoll = document.getElementById("studentRoll").value;
-    const Biology = parseInt(document.getElementById("biology").value);
-    const Chemistry = parseInt(document.getElementById("chemistry").value);
-    const Physics = parseInt(document.getElementById("physics").value);
+    var studentName = document.getElementById("studentName").value;
+    var studentRoll = document.getElementById("studentRoll").value;
+    var Biology = parseInt(document.getElementById("biology").value);
+    var Chemistry = parseInt(document.getElementById("chemistry").value);
+    var Physics = parseInt(document.getElementById("physics").value);
+    var Maths = parseInt(document.getElementById("maths").value);
 
 
-    if (Biology >= 100 && Chemistry >= 100 && Physics >= 100) {
+    if (Biology > 100 || Chemistry > 100 || Physics > 100 || Maths > 100 ) {
         alert("Write marks less then 100");
+        return;
     }
-    if (!studentName || !studentRoll || isNaN(Biology) || isNaN(Chemistry) || isNaN(Physics)) {
+    if (!studentName || !studentRoll || isNaN(Biology) || isNaN(Chemistry) || isNaN(Physics) || isNaN(Maths)) {
         alert("Please fill out all fields.");
         return;
     }
     
 
-    const totalMarks = Biology + Chemistry + Physics;
-    const percentage = (totalMarks / 300) * 100;
+    var totalMarks = Biology + Chemistry + Physics + Maths;
+    var percentage = (totalMarks / 400) * 100;
 
-    const marksheetBody = `
+    var marksheetBody = `
         <tr>
             <td>Biology</td>
             <td>100</td>
@@ -51,14 +52,18 @@ function generateMarksheet() {
             <td>100</td>
             <td>${Physics}</td>
         </tr>
+        <tr>
+            <td>Mathematics</td>
+            <td>100</td>
+            <td>${Maths}</td>
+        </tr>
+        
     `;
 
-    // Inject the table rows and results
     document.getElementById("marksheetBody").innerHTML = marksheetBody;
-    document.getElementById("result").innerText = `Total Marks: ${totalMarks}/300`;
+    document.getElementById("result").innerText = `Total Marks: ${totalMarks}/400`;
     document.getElementById("percentage").innerText = `Percentage: ${percentage.toFixed(2)}%`;
 
-    // Show the marksheet container
     document.getElementById("studentForm").style.display = "none";
     document.getElementById("marksheet").style.display = "block";
 }

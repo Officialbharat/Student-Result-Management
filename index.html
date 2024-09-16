@@ -12,12 +12,14 @@
     <div class="login-container" id="loginForm">
         <h2>Login</h2>
         <div class="form-group">
-            <input type="text" id="username" placeholder="Username" required>
+            <input type="text" id="username" placeholder="Username" required >
         </div>
         <div class="form-group">
             <input type="password" id="password" placeholder="Password" required>
         </div>
+        <div class="form-group">
         <button onclick="login()">Login</button>
+        </div>
     </div>
 
     <!-- Student Data Input Form -->
@@ -27,7 +29,7 @@
             <input type="text" id="studentName" placeholder="Student Name">
         </div>
         <div class="form-group">
-            <input type="text" id="studentRoll" placeholder="Roll Number">
+            <input type="number" id="studentRoll" placeholder="Roll Number">
         </div>
 
         <!-- Subject Marks Input -->
@@ -40,6 +42,9 @@
         <div class="form-group">
             <input type="number" id="physics" placeholder="Enter Physics Marks">
         </div>
+        <div class="form-group">
+            <input type="number" id="maths" placeholder="Enter Mathematics Marks" >
+        </div>
         <button onclick="generateMarksheet()">Generate Marksheet</button>
     </div>
 
@@ -47,20 +52,22 @@
     <div class="marksheet-container" id="marksheet">
         <h2>Codenetic Academy Mithi</h2>
         <h3>Marks Certificate</h3>
-        <table>
+        <table >
             <thead>
                 <tr>
-                    <th>Subject</th>
-                    <th>Max Marks</th>
-                    <th>Marks Obtained</th>
+                    <th class="heading">Subject</th>
+                    <th class="heading">Max Marks</th>
+                    <th class="heading">Marks Obtained</th>
                 </tr>
             </thead>
             <tbody id="marksheetBody">
                 <!-- Dynamic Data Here -->
             </tbody>
         </table>
+        <div class="res">
         <p class="result" id="result"></p>
         <p class="result" id="percentage"></p>
+    </div>
     </div>
 
     <script src="marksheet.js"></script>
