@@ -51,6 +51,11 @@ body {
     font-weight: 600;
     
 }
+.userDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 tbody tr, tbody tr td{
     text-align: center;
     font-size: 20px;

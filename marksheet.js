@@ -21,6 +21,7 @@ function generateMarksheet() {
     var Chemistry = parseInt(document.getElementById("chemistry").value);
     var Physics = parseInt(document.getElementById("physics").value);
     var Maths = parseInt(document.getElementById("maths").value);
+    
 
 
     if (Biology > 100 || Chemistry > 100 || Physics > 100 || Maths > 100 ) {
@@ -32,7 +33,8 @@ function generateMarksheet() {
         return;
     }
     
-
+    document.getElementById("user").innerText = `Name: ${studentName}`;
+    document.getElementById("userroll").innerText = `Roll No: ${studentRoll}`;
     var totalMarks = Biology + Chemistry + Physics + Maths;
     var percentage = (totalMarks / 400) * 100;
 
